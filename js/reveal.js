@@ -367,6 +367,18 @@ var Reveal = (function(){
 		dom.progress = createSingletonNode( dom.wrapper, 'div', 'progress', '<span></span>' );
 		dom.progressbar = dom.progress.querySelector( 'span' );
 
+		dom.duraarkfooter = createSingletonNode( dom.wrapper, 'div', 'duraarkfooter', '');
+		//dom.duraarkfooterleft = dom.progress.querySelector('span');
+		dom.duraarkfooterleft = createSingletonNode(dom.duraarkfooter, 'div', 'duraarkfooterleft', '');
+		dom.duraarkfootertitle = createSingletonNode(dom.duraarkfooterleft, 'div', 'duraarkfootertitle', '');
+		dom.duraarkfooterinfo = createSingletonNode(dom.duraarkfooterleft, 'div', 'duraarkfooterinfo', '');
+		dom.duraarkfooterslide = createSingletonNode(dom.duraarkfooterinfo, 'span', 'duraarkfooterslide', '');
+		dom.duraarkfooterdate = createSingletonNode(dom.duraarkfooterinfo, 'span', 'duraarkfooterdate', '');
+		dom.duraarkfooterauthor = createSingletonNode(dom.duraarkfooterinfo, 'span', 'duraarkfooterauthor', '');
+		dom.duraarkfooterright = createSingletonNode(dom.duraarkfooter, 'div', 'duraarkfooterright', '');
+		dom.duraarkfooterlogo = createSingletonNode(dom.duraarkfooterright, 'div', 'duraarkfooterlogo', '<img border="0" height="100%" src="./images/DURAARK-Logo_grey.jpg">');
+		dom.duraarkfootereuro = createSingletonNode(dom.duraarkfooterright, 'div', 'duraarkfootereuro', '<img border="0" height="100%" src="./images/flag_yellow_low.jpg">');
+
 		// Arrow controls
 		createSingletonNode( dom.wrapper, 'aside', 'controls',
 			'<div class="navigate-left"></div>' +
@@ -550,6 +562,7 @@ var Reveal = (function(){
 
 		dom.controls.style.display = config.controls ? 'block' : 'none';
 		dom.progress.style.display = config.progress ? 'block' : 'none';
+		dom.duraarkfooter.style.display = 'block';
 
 		if( config.rtl ) {
 			dom.wrapper.classList.add( 'rtl' );
@@ -1820,18 +1833,20 @@ var Reveal = (function(){
 	function updateProgress() {
 
 		// Update progress if enabled
-		if( config.progress && dom.progress ) {
+		if( dom.duraarkfooterslide ) {
 
 			var horizontalSlides = toArray( document.querySelectorAll( HORIZONTAL_SLIDES_SELECTOR ) );
 
 			// The number of past and total slides
 			var totalCount = document.querySelectorAll( SLIDES_SELECTOR + ':not(.stack)' ).length;
 			var pastCount = 0;
+            var title = "";
 
 			// Step through all slides and count the past ones
 			mainLoop: for( var i = 0; i < horizontalSlides.length; i++ ) {
 
 				var horizontalSlide = horizontalSlides[i];
+                title = horizontalSlide.attributes.getNamedItem('title').value;
 				var verticalSlides = toArray( horizontalSlide.querySelectorAll( 'section' ) );
 
 				for( var j = 0; j < verticalSlides.length; j++ ) {
@@ -1857,7 +1872,18 @@ var Reveal = (function(){
 
 			}
 
-			dom.progressbar.style.width = ( pastCount / ( totalCount - 1 ) ) * window.innerWidth + 'px';
+            var dateElem = document.querySelector('date');
+            if (dateElem) {
+                dom.duraarkfooterdate.innerHTML = dateElem.innerHTML;
+            }
+            var authorElem = document.querySelector('author');
+            if (authorElem) {
+                dom.duraarkfooterauthor.innerHTML = authorElem.innerHTML;
+            }
+            dom.duraarkfootertitle.innerHTML = title;
+            dom.duraarkfooterslide.innerHTML = (pastCount + 1) + " / " + totalCount;
+			//dom.duraarkfooterdate.innerHTML = crtDate
+			//dom.progressbar.style.width = ( pastCount / ( totalCount - 1 ) ) * window.innerWidth + 'px';
 
 		}
 

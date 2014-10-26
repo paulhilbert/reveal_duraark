@@ -497,6 +497,112 @@ body {
 		        transition: width 800ms cubic-bezier(0.260, 0.860, 0.440, 0.985);
 	}
 
+
+.reveal .duraarkfooter {
+	position: fixed;
+	display: none;
+	height: 100px;
+	width: 100%;
+	bottom: 0;
+	left: 0;
+	z-index: 10;
+    background-color: #ebebeb;
+}
+
+.reveal .duraarkfooter .duraarkfooterleft {
+    display: block;
+    height: 70px;
+    width: calc(100% - 400px);
+    border-right: 2px solid white;
+    float: left;
+}
+
+.reveal .duraarkfooter .duraarkfooterleft .duraarkfootertitle {
+    display: block;
+    height: 70%;
+    width: 100%;
+    border-bottom: 2px solid white;
+    color: black;
+    font-size: 20pt;
+    text-align: left;
+    /*vertical-align: middle;*/
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+
+.reveal .duraarkfooter .duraarkfooterleft .duraarkfooterinfo {
+    display: block;
+    height: 30px;
+    width: 100%;
+}
+
+.reveal .duraarkfooter .duraarkfooterleft .duraarkfooterinfo .duraarkfooterslide {
+    display: block;
+    height: 100%;
+    width: 100px;
+    border-right: 2px solid white;
+    font-size: 10pt;
+    color: black;
+    text-align: center;
+    padding: 5px 5px;
+    float: left;
+}
+
+.reveal .duraarkfooter .duraarkfooterleft .duraarkfooterinfo .duraarkfooterdate {
+    display: block;
+    height: 100%;
+    width: 100px;
+    border-right: 2px solid white;
+    font-size: 10pt;
+    color: black;
+    text-align: center;
+    padding: 5px 5px;
+    /*margin-left: 112px;*/
+    float: left;
+}
+
+.reveal .duraarkfooter .duraarkfooterleft .duraarkfooterinfo .duraarkfooterauthor {
+    display: block;
+    height: 100%;
+    font-size: 10pt;
+    color: black;
+    text-align: left;
+    padding: 5px 5px;
+    padding-left: 20px;
+    margin-left: 224px;
+}
+
+.reveal .duraarkfooter .duraarkfooterright {
+    display: block;
+    height: 100%;
+    width: 30%;
+    margin-left: 70%;
+}
+
+.reveal .duraarkfooter .duraarkfooterright .duraarkfooterlogo {
+    display: block;
+    height: 100%;
+    width: 240px;
+    float: left;
+}
+
+.reveal .duraarkfooter .duraarkfooterright .duraarkfootereuro {
+    display: block;
+    height: 100%;
+    width: 150px;
+    margin-left: calc(100% - 150px);
+    background-color: #111f8a;
+}
+
+date {
+    display: none;
+}
+
+author {
+    display: none;
+}
+
 /*********************************************
  * SLIDE NUMBER
  *********************************************/
