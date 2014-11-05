@@ -1880,7 +1880,7 @@ var Reveal = (function(){
             if (authorElem) {
                 dom.duraarkfooterauthor.innerHTML = authorElem.innerHTML;
             }
-            dom.duraarkfootertitle.innerHTML = title;
+            dom.duraarkfootertitle.innerHTML = "<span>" + title + "</span>";
             dom.duraarkfooterslide.innerHTML = (pastCount + 1) + " / " + totalCount;
 			//dom.duraarkfooterdate.innerHTML = crtDate
 			//dom.progressbar.style.width = ( pastCount / ( totalCount - 1 ) ) * window.innerWidth + 'px';
