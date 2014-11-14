@@ -499,8 +499,8 @@ body {
 
 
 .reveal .duraarkfooter {
-	position: fixed;
-	display: none;
+    position: fixed;
+    /*display: none;*/
 	height: 100px;
 	width: 100%;
 	bottom: 0;
@@ -509,42 +509,45 @@ body {
     background-color: #ebebeb;
 }
 
+.reveal .duraarkfooter .duraarkfooterright {
+    /*display: block;*/
+    float: right;
+    height: 100px;
+    width: 398px;
+    overflow: hidden;
+}
+
+.reveal .duraarkfooter .duraarkfooterright img {
+    height: 100px;
+    border: none;
+    margin: 0;
+    min-height: 100px;
+}
+
 .reveal .duraarkfooter .duraarkfooterleft {
     display: block;
-    height: 100px;
-    width: calc(100% - 400px);
+    height: 100%;
+    width: auto;
     border-right: 2px solid white;
-    float: left;
+    overflow: hidden;
+    padding: 0;
 }
 
 .reveal .duraarkfooter .duraarkfooterleft .duraarkfootertitle {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
     display: block;
-    height: 70%;
-    width: 100%;
+    height: 70px;
     border-bottom: 2px solid white;
     color: black;
     font-size: 20pt;
     text-align: left;
     /*vertical-align: middle;*/
     padding-top: 20px;
-    padding-left: 30px;
-    -moz-box-sizing: border-box; 
-    -webkit-box-sizing: 
-     border-box; box-sizing: border-box; 
-}
-
-.reveal .duraarkfooter .duraarkfooterleft .duraarkfootertitle span {
-    display: inline;
-    /*height: 70%;*/
-    /*width: 100%;*/
-    color: black;
-    font-size: 20pt;
-    text-align: left;
-    /*margin-left: 20px;*/
-    /*margin-top: 10px;*/
-    /*vertical-align: middle;*/
-    /*padding-top: 20px;*/
-    /*padding-left: 20px;*/
+    padding-left: 20px;
+    letter-spacing: 0.0em;
+    overflow: hidden;
 }
 
 
@@ -552,6 +555,7 @@ body {
     display: block;
     height: 30px;
     width: 100%;
+    overflow: hidden;
 }
 
 .reveal .duraarkfooter .duraarkfooterleft .duraarkfooterinfo .duraarkfooterslide {
@@ -564,6 +568,7 @@ body {
     text-align: center;
     padding: 5px 5px;
     float: left;
+    overflow: hidden;
 }
 
 .reveal .duraarkfooter .duraarkfooterleft .duraarkfooterinfo .duraarkfooterdate {
@@ -577,6 +582,7 @@ body {
     padding: 5px 5px;
     /*margin-left: 112px;*/
     float: left;
+    overflow: hidden;
 }
 
 .reveal .duraarkfooter .duraarkfooterleft .duraarkfooterinfo .duraarkfooterauthor {
@@ -588,13 +594,7 @@ body {
     padding: 5px 5px;
     padding-left: 20px;
     margin-left: 224px;
-}
-
-.reveal .duraarkfooter .duraarkfooterright {
-    display: block;
-    height: 100%;
-    width: 30%;
-    margin-left: 70%;
+    overflow: hidden;
 }
 
 .reveal .duraarkfooter .duraarkfooterright .duraarkfooterlogo {

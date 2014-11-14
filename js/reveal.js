@@ -368,16 +368,15 @@ var Reveal = (function(){
 		dom.progressbar = dom.progress.querySelector( 'span' );
 
 		dom.duraarkfooter = createSingletonNode( dom.wrapper, 'div', 'duraarkfooter', '');
-		//dom.duraarkfooterleft = dom.progress.querySelector('span');
+
+		dom.duraarkfooterright = createSingletonNode(dom.duraarkfooter, 'div', 'duraarkfooterright', '<img src="./images/DURAARK-Logo_grey.jpg"></img><img src="./images/flag_yellow_low.jpg"></img>');
+
 		dom.duraarkfooterleft = createSingletonNode(dom.duraarkfooter, 'div', 'duraarkfooterleft', '');
-		dom.duraarkfootertitle = createSingletonNode(dom.duraarkfooterleft, 'div', 'duraarkfootertitle', '');
-		dom.duraarkfooterinfo = createSingletonNode(dom.duraarkfooterleft, 'div', 'duraarkfooterinfo', '');
-		dom.duraarkfooterslide = createSingletonNode(dom.duraarkfooterinfo, 'span', 'duraarkfooterslide', '');
-		dom.duraarkfooterdate = createSingletonNode(dom.duraarkfooterinfo, 'span', 'duraarkfooterdate', '');
-		dom.duraarkfooterauthor = createSingletonNode(dom.duraarkfooterinfo, 'span', 'duraarkfooterauthor', '');
-		dom.duraarkfooterright = createSingletonNode(dom.duraarkfooter, 'div', 'duraarkfooterright', '');
-		dom.duraarkfooterlogo = createSingletonNode(dom.duraarkfooterright, 'div', 'duraarkfooterlogo', '<img border="0" height="100%" src="./images/DURAARK-Logo_grey.jpg">');
-		dom.duraarkfootereuro = createSingletonNode(dom.duraarkfooterright, 'div', 'duraarkfootereuro', '<img border="0" height="100%" src="./images/flag_yellow_low.jpg">');
+        dom.duraarkfootertitle = createSingletonNode(dom.duraarkfooterleft, 'div', 'duraarkfootertitle', '');
+        dom.duraarkfooterinfo = createSingletonNode(dom.duraarkfooterleft, 'div', 'duraarkfooterinfo', '');
+        dom.duraarkfooterslide = createSingletonNode(dom.duraarkfooterinfo, 'span', 'duraarkfooterslide', '');
+        dom.duraarkfooterdate = createSingletonNode(dom.duraarkfooterinfo, 'span', 'duraarkfooterdate', '');
+        dom.duraarkfooterauthor = createSingletonNode(dom.duraarkfooterinfo, 'span', 'duraarkfooterauthor', '');
 
 		// Arrow controls
 		createSingletonNode( dom.wrapper, 'aside', 'controls',
@@ -1880,7 +1879,7 @@ var Reveal = (function(){
             if (authorElem) {
                 dom.duraarkfooterauthor.innerHTML = authorElem.innerHTML;
             }
-            dom.duraarkfootertitle.innerHTML = "<span>" + title + "</span>";
+            dom.duraarkfootertitle.innerHTML = title;
             dom.duraarkfooterslide.innerHTML = (pastCount + 1) + " / " + totalCount;
 			//dom.duraarkfooterdate.innerHTML = crtDate
 			//dom.progressbar.style.width = ( pastCount / ( totalCount - 1 ) ) * window.innerWidth + 'px';
